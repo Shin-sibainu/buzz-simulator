@@ -6,7 +6,6 @@ import { Post } from '../types';
 
 interface TweetProps {
   post: Post;
-  onPost: () => void;
   onPostClick?: () => void;
 }
 

@@ -90,10 +90,6 @@ export default function Home() {
     };
   }, []);
 
-  const handlePostClick = () => {
-    setShowPostNotifications(true);
-    setActiveTab("notifications");
-  };
 
   const renderContent = () => {
     switch (activeTab) {
@@ -121,7 +117,6 @@ export default function Home() {
                   <Tweet
                     key={post.id}
                     post={post}
-                    onPost={handlePost}
                     onPostClick={() => {
                       setShowPostNotifications(true);
                       setActiveTab("notifications");
