@@ -5,8 +5,10 @@ export interface Notification {
     name: string;
     username: string;
     avatar: string;
+    avatarColor?: string;
   };
   content?: string;
+  originalPost?: string;
   timestamp: Date;
 }
 

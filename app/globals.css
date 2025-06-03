@@ -1,15 +1,24 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* カスタムCSS変数 */
 :root {
-  --background: #000000;
-  --foreground: #ffffff;
+  --background: #ffffff;
+  --foreground: #000000;
+  --border-color: #e5e7eb;
+  --secondary-bg: #f9fafb;
+  --hover-bg: #f3f4f6;
+  --muted-text: #6b7280;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  --background: #000000;
+  --foreground: #ffffff;
+  --border-color: #2f3336;
+  --secondary-bg: #16181c;
+  --hover-bg: #1c1f23;
+  --muted-text: #71767b;
 }
 
 body {
@@ -17,6 +26,7 @@ body {
   color: var(--foreground);
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   min-height: 100vh;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 * {
