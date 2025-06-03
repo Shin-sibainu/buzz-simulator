@@ -32,7 +32,7 @@ export default function PostComposer({ onPost }: PostComposerProps) {
           <div className="flex items-center justify-between mt-3 pt-3 border-t border-gray-200 dark:border-[#2f3336]">
             <div className="flex items-center gap-2 lg:gap-4">
               <button className="text-[#1d9bf0] hover:bg-[#1d9bf0]/10 p-2 rounded-full transition-colors">
-                <Image className="w-5 h-5" />
+                <Image className="w-5 h-5" alt="画像を追加" />
               </button>
               <button className="text-[#1d9bf0] hover:bg-[#1d9bf0]/10 p-2 rounded-full transition-colors">
                 <FileImage className="w-5 h-5" />

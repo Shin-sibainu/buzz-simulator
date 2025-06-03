@@ -3,8 +3,8 @@
 import { Home, Bell, Search, User } from 'lucide-react';
 
 interface MobileBottomNavProps {
-  activeTab: 'home' | 'notifications';
-  onTabChange: (tab: 'home' | 'notifications') => void;
+  activeTab: 'home' | 'notifications' | 'profile';
+  onTabChange: (tab: 'home' | 'notifications' | 'profile') => void;
   notificationCount: number;
 }
 
@@ -48,8 +48,15 @@ export default function MobileBottomNav({ activeTab, onTabChange, notificationCo
           <span className="text-xs mt-1">通知</span>
         </button>
         
-        <button className="flex-1 flex flex-col items-center py-3 text-gray-500 dark:text-gray-400">
-          <User className="w-6 h-6" strokeWidth={1.5} />
+        <button
+          onClick={() => onTabChange('profile')}
+          className={`flex-1 flex flex-col items-center py-3 ${
+            activeTab === 'profile' 
+              ? 'text-black dark:text-white' 
+              : 'text-gray-500 dark:text-gray-400'
+          }`}
+        >
+          <User className="w-6 h-6" strokeWidth={activeTab === 'profile' ? 2 : 1.5} />
           <span className="text-xs mt-1">プロフィール</span>
         </button>
       </div>

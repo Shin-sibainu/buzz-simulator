@@ -4,7 +4,7 @@ import XLogo from './XLogo';
 import ThemeToggle from './ThemeToggle';
 
 interface MobileTopHeaderProps {
-  activeTab: 'home' | 'notifications';
+  activeTab: 'home' | 'notifications' | 'profile';
 }
 
 export default function MobileTopHeader({ activeTab }: MobileTopHeaderProps) {
@@ -14,7 +14,7 @@ export default function MobileTopHeader({ activeTab }: MobileTopHeaderProps) {
         <div className="flex items-center gap-3">
           <XLogo className="w-7 h-7" />
           <h1 className="text-xl font-bold">
-            {activeTab === 'home' ? 'ホーム' : '通知'}
+            {activeTab === 'home' ? 'ホーム' : activeTab === 'notifications' ? '通知' : 'プロフィール'}
           </h1>
         </div>
         <ThemeToggle />

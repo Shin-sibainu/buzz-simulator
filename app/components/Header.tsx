@@ -6,8 +6,8 @@ import XLogo from './XLogo';
 
 interface HeaderProps {
   notificationCount: number;
-  activeTab: 'home' | 'notifications';
-  onTabChange: (tab: 'home' | 'notifications') => void;
+  activeTab: 'home' | 'notifications' | 'profile';
+  onTabChange: (tab: 'home' | 'notifications' | 'profile') => void;
   className?: string;
 }
 
@@ -68,10 +68,17 @@ export default function Header({ notificationCount, activeTab, onTabChange, clas
             <span className="text-xl">ブックマーク</span>
           </Link>
           
-          <Link href="#" className="flex items-center gap-5 px-3 py-3 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition-colors group">
-            <User className="w-7 h-7" strokeWidth={1.5} />
+          <button 
+            onClick={() => onTabChange('profile')}
+            className={`flex items-center gap-5 px-3 py-3 rounded-full transition-colors group w-full ${
+              activeTab === 'profile' 
+                ? 'font-bold' 
+                : 'hover:bg-gray-100 dark:hover:bg-white/10'
+            }`}
+          >
+            <User className="w-7 h-7" strokeWidth={activeTab === 'profile' ? 2 : 1.5} />
             <span className="text-xl">プロフィール</span>
-          </Link>
+          </button>
           
           <Link href="#" className="flex items-center gap-5 px-3 py-3 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 transition-colors group">
             <MoreHorizontal className="w-7 h-7" strokeWidth={1.5} />

@@ -10,7 +10,7 @@ interface TweetProps {
   onPostClick?: () => void;
 }
 
-export default function Tweet({ post, onPost, onPostClick }: TweetProps) {
+export default function Tweet({ post, onPostClick }: TweetProps) {
   const [animateLikes, setAnimateLikes] = useState(false);
   const [animateRetweets, setAnimateRetweets] = useState(false);
 
@@ -80,7 +80,7 @@ export default function Tweet({ post, onPost, onPostClick }: TweetProps) {
               <span className="text-[13px]">{formatNumber(post.views)}</span>
             </button>
             <div className="flex items-center gap-1">
-              <button className="p-2 rounded-full hover:bg-[#1d9bf0]/10 text-gray-500 dark:text-[#71767b] hover:text-[#1d9bf0] transition-colors">
+              <button className="hidden sm:block p-2 rounded-full hover:bg-[#1d9bf0]/10 text-gray-500 dark:text-[#71767b] hover:text-[#1d9bf0] transition-colors">
                 <Bookmark className="w-5 h-5" />
               </button>
               <button className="p-2 rounded-full hover:bg-[#1d9bf0]/10 text-gray-500 dark:text-[#71767b] hover:text-[#1d9bf0] transition-colors">
