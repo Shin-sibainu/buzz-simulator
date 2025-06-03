@@ -77,7 +77,7 @@ export default function PromoSection() {
           </p>
           <div className="flex flex-col sm:flex-row gap-2">
             <a
-              href="https://twitter.com/intent/tweet?text=バズシミュレーターでバズってみた！%0A%0A投稿がバズる体験ができる面白いサービス見つけたよ😄%0A%0A&url=https://buzz-simulator.vercel.app"
+              href="https://twitter.com/intent/tweet?text=バズシミュレーターでバズってみた！%0A%0A投稿がバズる体験ができる面白いサービス見つけたよ😄%0A%0A&url=https://buzz-simulator-bice.vercel.app"
               target="_blank"
               rel="noopener noreferrer"
               className="flex-1 bg-black dark:bg-white text-white dark:text-black py-2 px-3 rounded-full text-sm font-bold hover:opacity-80 transition-opacity text-center"
@@ -86,7 +86,7 @@ export default function PromoSection() {
             </a>
             <button
               onClick={() => {
-                navigator.clipboard.writeText('https://buzz-simulator.vercel.app');
+                navigator.clipboard.writeText('https://buzz-simulator-bice.vercel.app');
                 alert('URLをコピーしました！');
               }}
               className="w-full sm:w-auto px-3 py-2 bg-gray-200 dark:bg-gray-800 rounded-full hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors text-center"

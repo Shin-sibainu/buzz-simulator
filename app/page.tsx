@@ -43,7 +43,7 @@ export default function Home() {
 
     // Start generating notifications
     let notificationCount = 0;
-    const maxNotifications = mode === "buzz" ? 100 : 50;
+    const maxNotifications = 50;
 
     intervalRef.current = setInterval(() => {
       setNotifications((prev) => {
@@ -383,7 +383,7 @@ export default function Home() {
                       : "バズシミュレーターで炎上体験してみた！"
                   }%0A%0A${
                     notifications.length
-                  }件の通知が来てすごかった😄%0A%0A&url=https://buzz-simulator.vercel.app`}
+                  }件の通知が来てすごかった😄%0A%0A&url=https://buzz-simulator-bice.vercel.app`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="block w-full bg-black dark:bg-white text-white dark:text-black py-3 px-4 rounded-full font-bold hover:opacity-80 transition-opacity"
@@ -399,7 +399,7 @@ export default function Home() {
                           : "バズシミュレーターで炎上体験してみた！"
                       } ${
                         notifications.length
-                      }件の通知が来てすごかった😄 https://buzz-simulator.vercel.app`
+                      }件の通知が来てすごかった😄 https://buzz-simulator-bice.vercel.app`
                     );
                     alert("テキストをコピーしました！");
                   }}

@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "バズシミュレーター - SNSバズ体験サービス",
     description: "投稿がバズったり炎上したりする体験ができるエンターテインメントサービス",
-    url: "https://buzz-simulator.vercel.app",
+    url: "https://buzz-simulator-bice.vercel.app",
     siteName: "バズシミュレーター",
     images: [
       {
