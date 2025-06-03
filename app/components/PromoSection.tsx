@@ -13,7 +13,7 @@ export default function PromoSection() {
         
         <div className="space-y-3">
           <a
-            href="https://youtube.com/@ShinCode"
+            href="https://www.youtube.com/channel/UCNTxclE0N4qsUuirssL_D8w"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-3 p-3 rounded-lg bg-white/50 dark:bg-white/[0.03] hover:bg-white/80 dark:hover:bg-white/[0.06] transition-all hover:scale-[1.02] border border-transparent hover:border-purple-200 dark:hover:border-purple-900"
@@ -23,7 +23,7 @@ export default function PromoSection() {
             </div>
             <div className="flex-1">
               <div className="font-bold text-gray-900 dark:text-[#e7e9ea] flex items-center gap-1">
-                チャンネル登録7万人突破！
+                チャンネル登録5.5万人突破！
                 <TrendingUp className="w-3 h-3 text-green-500" />
               </div>
               <div className="text-sm text-gray-600 dark:text-[#71767b]">無料で学べるプログラミング動画が500本以上</div>
@@ -32,7 +32,25 @@ export default function PromoSection() {
           </a>
           
           <a
-            href="https://shincode-camp.com"
+            href="https://x.com/Shin_Engineer"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 p-3 rounded-lg bg-white/50 dark:bg-white/[0.03] hover:bg-white/80 dark:hover:bg-white/[0.06] transition-all hover:scale-[1.02] border border-transparent hover:border-gray-200 dark:hover:border-gray-700"
+          >
+            <div className="p-2 bg-gray-100 dark:bg-gray-800 rounded-full">
+              <svg className="w-5 h-5 text-gray-800 dark:text-gray-200" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </div>
+            <div className="flex-1">
+              <div className="font-bold text-gray-900 dark:text-[#e7e9ea]">X (Twitter)</div>
+              <div className="text-sm text-gray-600 dark:text-[#71767b]">プログラミング情報や最新技術をポスト</div>
+            </div>
+            <ExternalLink className="w-4 h-4 text-gray-500 dark:text-[#71767b]" />
+          </a>
+          
+          <a
+            href="http://shincode.info/2021/12/31/udemy-discount-coupon/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-3 p-3 rounded-lg bg-white/50 dark:bg-white/[0.03] hover:bg-white/80 dark:hover:bg-white/[0.06] transition-all hover:scale-[1.02] border border-transparent hover:border-blue-200 dark:hover:border-blue-900"
@@ -41,8 +59,8 @@ export default function PromoSection() {
               <BookOpen className="w-5 h-5 text-[#1d9bf0]" />
             </div>
             <div className="flex-1">
-              <div className="font-bold text-gray-900 dark:text-[#e7e9ea]">実践的なWeb開発を学ぼう</div>
-              <div className="text-sm text-gray-600 dark:text-[#71767b]">Next.js・TypeScript・AIアプリ開発講座</div>
+              <div className="font-bold text-gray-900 dark:text-[#e7e9ea]">Udemyクーポン＆スクール情報</div>
+              <div className="text-sm text-gray-600 dark:text-[#71767b]">お得な割引クーポンとオンラインスクール案内</div>
             </div>
             <ExternalLink className="w-4 h-4 text-gray-500 dark:text-[#71767b]" />
           </a>

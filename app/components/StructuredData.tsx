@@ -16,7 +16,7 @@ export default function StructuredData() {
     "creator": {
       "@type": "Person",
       "name": "ShinCode",
-      "url": "https://youtube.com/@ShinCode"
+      "url": "https://www.youtube.com/channel/UCNTxclE0N4qsUuirssL_D8w"
     },
     "image": "https://buzz-simulator.vercel.app/api/og",
     "keywords": "バズ, SNS, シミュレーター, 炎上, Twitter, X, エンターテインメント",

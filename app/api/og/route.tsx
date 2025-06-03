@@ -43,10 +43,10 @@ export async function GET() {
           {/* Title */}
           <div
             style={{
-              fontSize: 80,
+              fontSize: 72,
               fontWeight: 900,
               textAlign: 'center',
-              marginBottom: 24,
+              marginBottom: 16,
               background: 'linear-gradient(45deg, #1d9bf0, #f91880)',
               backgroundClip: 'text',
               WebkitBackgroundClip: 'text',
@@ -55,13 +55,13 @@ export async function GET() {
               letterSpacing: '-0.02em',
             }}
           >
-            バズシミュレーター
+            X・SNSバズシミュレーター
           </div>
           
           {/* Subtitle */}
           <div
             style={{
-              fontSize: 40,
+              fontSize: 38,
               color: '#1e293b',
               textAlign: 'center',
               marginBottom: 50,
@@ -69,7 +69,7 @@ export async function GET() {
               textShadow: '0 2px 4px rgba(0,0,0,0.1)',
             }}
           >
-            投稿がバズる体験ができる
+            投稿がバズる・炎上する体験ができる
           </div>
           
           {/* Features */}
