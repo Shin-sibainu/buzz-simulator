@@ -5,10 +5,10 @@ import { ExternalLink, Youtube, BookOpen, Sparkles, TrendingUp } from 'lucide-re
 export default function PromoSection() {
   return (
     <div className="p-4">
-      <div className="bg-gradient-to-br from-purple-50 to-blue-50 dark:from-[#1a1b26] dark:to-[#16181c] rounded-2xl p-4 border border-purple-100 dark:border-[#2f3336]">
+      <div className="bg-gradient-to-br from-purple-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 rounded-2xl p-4 border border-purple-100 dark:border-gray-700">
         <div className="flex items-center gap-2 mb-4">
           <Sparkles className="w-5 h-5 text-purple-500" />
-          <h3 className="text-lg font-bold text-gray-900 dark:text-[#e7e9ea]">このアプリを作った人</h3>
+          <h3 className="text-lg font-bold text-gray-900 dark:text-white">このアプリを作った人</h3>
         </div>
         
         <div className="space-y-3">
@@ -22,11 +22,11 @@ export default function PromoSection() {
               <Youtube className="w-5 h-5 text-red-500" />
             </div>
             <div className="flex-1">
-              <div className="font-bold text-gray-900 dark:text-[#e7e9ea] flex items-center gap-1">
+              <div className="font-bold text-gray-900 dark:text-white flex items-center gap-1">
                 チャンネル登録5.5万人突破！
                 <TrendingUp className="w-3 h-3 text-green-500" />
               </div>
-              <div className="text-sm text-gray-600 dark:text-[#71767b]">無料で学べるプログラミング動画が500本以上</div>
+              <div className="text-sm text-gray-700 dark:text-gray-300">無料で学べるプログラミング動画が500本以上</div>
             </div>
             <ExternalLink className="w-4 h-4 text-gray-500 dark:text-[#71767b]" />
           </a>
@@ -43,8 +43,8 @@ export default function PromoSection() {
               </svg>
             </div>
             <div className="flex-1">
-              <div className="font-bold text-gray-900 dark:text-[#e7e9ea]">X (Twitter)</div>
-              <div className="text-sm text-gray-600 dark:text-[#71767b]">プログラミング情報や最新技術をポスト</div>
+              <div className="font-bold text-gray-900 dark:text-white">X (Twitter)</div>
+              <div className="text-sm text-gray-700 dark:text-gray-300">プログラミング情報や最新技術をポスト</div>
             </div>
             <ExternalLink className="w-4 h-4 text-gray-500 dark:text-[#71767b]" />
           </a>
@@ -59,20 +59,20 @@ export default function PromoSection() {
               <BookOpen className="w-5 h-5 text-[#1d9bf0]" />
             </div>
             <div className="flex-1">
-              <div className="font-bold text-gray-900 dark:text-[#e7e9ea]">Udemyクーポン＆スクール情報</div>
-              <div className="text-sm text-gray-600 dark:text-[#71767b]">お得な割引クーポンとオンラインスクール案内</div>
+              <div className="font-bold text-gray-900 dark:text-white">Udemyクーポン＆スクール情報</div>
+              <div className="text-sm text-gray-700 dark:text-gray-300">お得な割引クーポンとオンラインスクール案内</div>
             </div>
             <ExternalLink className="w-4 h-4 text-gray-500 dark:text-[#71767b]" />
           </a>
         </div>
         
-        <div className="mt-4 pt-4 border-t border-purple-200 dark:border-[#2f3336]">
+        <div className="mt-4 pt-4 border-t border-purple-200 dark:border-gray-600">
           <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-3 mb-3">
             <p className="text-xs text-yellow-800 dark:text-yellow-200 text-center">
               ⚠️ このアプリはシミュレーションです。投稿や通知などのデータは保存されません。
             </p>
           </div>
-          <p className="text-xs text-gray-600 dark:text-[#71767b] text-center mb-3">
+          <p className="text-xs text-gray-700 dark:text-gray-300 text-center mb-3">
             <span className="text-lg">💡</span> バズったら友達にもシェアしてね！
           </p>
           <div className="flex flex-col sm:flex-row gap-2">

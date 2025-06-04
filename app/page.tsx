@@ -23,7 +23,10 @@ export default function Home() {
   >("home");
   const [showPostNotifications, setShowPostNotifications] = useState(false);
   const [showShareModal, setShowShareModal] = useState(false);
+  const [hasShownShareModal, setHasShownShareModal] = useState(false);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const notificationListRef = useRef<HTMLDivElement>(null);
+  const [showNewNotificationBadge, setShowNewNotificationBadge] = useState(false);
 
   const handlePost = (content: string) => {
     const newPost: Post = {
@@ -36,10 +39,18 @@ export default function Home() {
       views: Math.floor(Math.random() * 100) + 10,
     };
 
+    // Clear any existing interval first
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+
     setPosts([newPost, ...posts]);
     setNotifications([]);
     setIsGenerating(true);
     setShowPostNotifications(false); // Reset to show all notifications
+    setHasShownShareModal(false); // Reset the flag for new post
+    setShowNewNotificationBadge(false); // Reset new notification badge
 
     // Start generating notifications
     let notificationCount = 0;
@@ -48,6 +59,15 @@ export default function Home() {
     intervalRef.current = setInterval(() => {
       setNotifications((prev) => {
         const newNotification = generateNotification(mode, content);
+        
+        // スクロール位置をチェックして、上部にいない場合は新着バッジを表示
+        if (notificationListRef.current && prev.length > 0) {
+          const scrollTop = notificationListRef.current.scrollTop;
+          if (scrollTop > 100) { // 100px以上スクロールしている場合
+            setShowNewNotificationBadge(true);
+          }
+        }
+        
         return [newNotification, ...prev];
       });
 
@@ -72,12 +92,16 @@ export default function Home() {
       if (notificationCount >= maxNotifications) {
         if (intervalRef.current) {
           clearInterval(intervalRef.current);
+          intervalRef.current = null;
         }
         setIsGenerating(false);
-        // Show share modal when notifications are complete
-        setTimeout(() => {
-          setShowShareModal(true);
-        }, 1000);
+        // Show share modal only once when notifications are complete
+        if (!hasShownShareModal) {
+          setTimeout(() => {
+            setShowShareModal(true);
+            setHasShownShareModal(true);
+          }, 1000);
+        }
       }
     }, 800);
   };
@@ -157,14 +181,35 @@ export default function Home() {
             </div>
 
             {notifications.length > 0 ? (
-              <div>
-                {notifications.map((notification, index) => (
-                  <NotificationItem
-                    key={notification.id}
-                    notification={notification}
-                    index={index}
-                  />
-                ))}
+              <div className="relative">
+                {showNewNotificationBadge && (
+                  <div className="sticky top-0 z-10 bg-[#1d9bf0] text-white text-center py-2 cursor-pointer hover:bg-[#1a8cd8] transition-colors"
+                    onClick={() => {
+                      notificationListRef.current?.scrollTo({ top: 0, behavior: 'smooth' });
+                      setShowNewNotificationBadge(false);
+                    }}
+                  >
+                    <span className="text-sm font-medium">新しい通知があります - タップして最新を見る</span>
+                  </div>
+                )}
+                <div 
+                  ref={notificationListRef}
+                  className="overflow-y-auto max-h-[calc(100vh-200px)]"
+                  onScroll={(e) => {
+                    const scrollTop = e.currentTarget.scrollTop;
+                    if (scrollTop < 50) {
+                      setShowNewNotificationBadge(false);
+                    }
+                  }}
+                >
+                  {notifications.map((notification, index) => (
+                    <NotificationItem
+                      key={notification.id}
+                      notification={notification}
+                      index={index}
+                    />
+                  ))}
+                </div>
               </div>
             ) : (
               <div className="p-8 text-center text-gray-500 dark:text-[#71767b]">
@@ -351,7 +396,7 @@ export default function Home() {
         {renderContent()}
       </main>
 
-      <aside className="hidden xl:block w-[350px] px-8 py-4">
+      <aside className="hidden xl:block w-[400px] px-8 py-4">
         <PromoSection />
       </aside>
 
